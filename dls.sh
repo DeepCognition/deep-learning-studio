@@ -37,6 +37,7 @@ run() {
     if [ ! -d "$DATA_DIR/database" ]; then
         mkdir -p $DATA_DIR/database
         mkdir $DATA_DIR/keras
+        mkdir -p $DATA_DIR/public/datasets/
     fi
     COMPUTE_PORT=`expr $PORT_NUM + 1`
     options=" -p $PORT_NUM:80 -p $COMPUTE_PORT:80 -p 8888:8888"
