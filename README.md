@@ -5,7 +5,7 @@ This repository contains installer for Deep Learning Studio Home Edition. Deep L
 
 For commercial and enterprise license, please contact hello@deepcognition.ai.
 
-Requirements for Deep Learning Studio Home Edition:
+**Requirements for Deep Learning Studio Home Edition:**
 
 1. Ubuntu 16.04 (other varients may work but not tested)
 
