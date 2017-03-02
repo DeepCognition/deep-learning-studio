@@ -45,7 +45,7 @@ run() {
     options+=" -v ${DATA_DIR}/keras:/root/.keras"
     docker rm deep-learning-studio 2>/dev/null
     echo "Starting..."
-    $DOCKER_CMD run --rm -d $options --name deep-learning-studio deepcognition/deep-learning-studio
+    $DOCKER_CMD run -d $options --name deep-learning-studio deepcognition/deep-learning-studio
     echo Done
     echo
     echo -e "Go to ${GREEN}http://127.0.0.1:"$PORT_NUM"/app/${NC} to start using Deep Learning Studio"
