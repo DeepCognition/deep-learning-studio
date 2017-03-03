@@ -1,11 +1,11 @@
 # deep-learning-studio
 GUI based deep learning platform
 
-This repository contains installer for Deep Learning Studio Home Edition. Deep Learning Studio Home Edition is provided for *FREE* for *NON-COMMERCIAL* use.
+This repository contains installer for Deep Learning Studio Personal Edition. Deep Learning Studio Personal Edition is provided for *FREE* for *NON-COMMERCIAL* use.
 
 For commercial and enterprise license, please contact hello@deepcognition.ai.
 
-**Requirements for Deep Learning Studio Home Edition:**
+**Requirements for Deep Learning Studio Personal Edition:**
 
 1. Ubuntu 16.04 (other varients may work but not tested)
 
@@ -32,15 +32,15 @@ For commercial and enterprise license, please contact hello@deepcognition.ai.
 **Running Deep Learning Studio**
 
 1. To start deep learning studio, type following:
-  - ./dls.sh -p <port number> -d /absolute/path/to/data/fodler run
+  - ./dls.sh -p <port number> -d /absolute/path/to/data/folder run
   - In your browser type the URL as showed by the above command.
   - Sign up for an user account at deepcognition to start using deep learning studio
   
 2. To stop deep learning studio
   - ./dls.sh stop
   
-**Limitations in Home Edition version:**
+**Limitations in Personal Edition version:**
 
-1. Home edition is limited to personal and acedemic research use.
-2. Home edition is limited to Single User and Single GPU.
+1. Personal edition is limited to personal and acedemic research use.
+2. Personal edition is limited to Single User and Single GPU.
 3. No dedicated support. If you are facing any issue in using the software, you can file the issue in this github project.
