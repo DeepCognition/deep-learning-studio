@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 DATA_DIR=$HOME/.deepcognition/dls/data
 PORT_NUM=80
@@ -77,11 +77,11 @@ run() {
         mkdir $DATA_DIR/keras
     fi
     COMPUTE_PORT=`expr $PORT_NUM + 1`
-    options=" -p $PORT_NUM:80 -p $COMPUTE_PORT:80 -p 8888:8888"
+    options=" -p $PORT_NUM:80 -p $COMPUTE_PORT:80 -p 8888:8888 -p 8880:8880"
     options+=" -v $DATA_DIR:/data"
     options+=" -v $DATA_DIR/database:/home/app/database"
     options+=" -v ${DATA_DIR}/keras:/root/.keras"
-    docker rm deep-learning-studio 2>/dev/null
+    docker rm deep-learning-studio 2>/dev/null || true
     echo "Starting..."
     $DOCKER_CMD run -d $options --name deep-learning-studio $IMAGE
     echo Done
