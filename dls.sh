@@ -2,6 +2,8 @@
 
 DATA_DIR=$HOME/.deepcognition/dls/data
 PORT_NUM=80
+JUPYTER_PORT=8888
+FILEBROWSER_PORT=8880
 DOCKER_CMD=/usr/bin/nvidia-docker
 RED='\033[1;31m'
 NC='\033[0m' # No Color
@@ -76,8 +78,8 @@ run() {
         mkdir -p $DATA_DIR/database
         mkdir $DATA_DIR/keras
     fi
-    COMPUTE_PORT=`expr $PORT_NUM + 1`
-    options=" -p $PORT_NUM:80 -p $COMPUTE_PORT:80 -p 8888:8888 -p 8880:8880"
+
+    options=" -p $PORT_NUM:80 -p $FILEBROWSER_PORT:8880 -p $JUPYTER_PORT:8888"
     options+=" -v $DATA_DIR:/data"
     options+=" -v $DATA_DIR/database:/home/app/database"
     options+=" -v ${DATA_DIR}/keras:/root/.keras"
@@ -93,7 +95,10 @@ while getopts :d:p: option
 do
     case "${option}" in
             d) DATA_DIR=${OPTARG};;
-            p) PORT_NUM=${OPTARG};;
+            p) PORT_NUM=${OPTARG}
+                FILEBROWSER_PORT=`expr $PORT_NUM + 8`
+                JUPYTER_PORT=`expr $PORT_NUM + 6`
+                ;;
             *) usage
     esac
 done
