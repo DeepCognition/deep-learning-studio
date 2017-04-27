@@ -2,6 +2,7 @@
 
 DATA_DIR=$HOME/.deepcognition/dls/data
 PORT_NUM=80
+COMPUTE_PORT=81
 JUPYTER_PORT=8888
 FILEBROWSER_PORT=8880
 DOCKER_CMD=/usr/bin/nvidia-docker
@@ -79,7 +80,7 @@ run() {
         mkdir $DATA_DIR/keras
     fi
 
-    options=" -p $PORT_NUM:80 -p $FILEBROWSER_PORT:8880 -p $JUPYTER_PORT:8888"
+    options=" -p $PORT_NUM:80 -p $COMPUTE_PORT:80 -p $FILEBROWSER_PORT:8880 -p $JUPYTER_PORT:8888"
     options+=" -v $DATA_DIR:/data"
     options+=" -v $DATA_DIR/database:/home/app/database"
     options+=" -v ${DATA_DIR}/keras:/root/.keras"
@@ -96,6 +97,7 @@ do
     case "${option}" in
             d) DATA_DIR=${OPTARG};;
             p) PORT_NUM=${OPTARG}
+                COMPUTE_PORT=`expr $PORT_NUM + 1`
                 FILEBROWSER_PORT=`expr $PORT_NUM + 8`
                 JUPYTER_PORT=`expr $PORT_NUM + 6`
                 ;;
