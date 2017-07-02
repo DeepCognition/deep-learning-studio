@@ -32,7 +32,7 @@ For commercial and enterprise license, please contact hello@deepcognition.ai.
 **Running Deep Learning Studio**
 
 1. To start deep learning studio, type following:
-  - ./dls.sh -p <port number> -d /absolute/path/to/data/folder run
+  - ./dls.sh -p `<port number>` -d /absolute/path/to/data/folder run
   - In your browser type the URL as showed by the above command.
   - Sign up for an user account at deepcognition to start using deep learning studio
   
