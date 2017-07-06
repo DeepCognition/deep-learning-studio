@@ -34,9 +34,12 @@ For commercial and enterprise license, please contact hello@deepcognition.ai.
 1. To start deep learning studio, type following:
   - ./dls.sh -p `<port number>` -d /absolute/path/to/data/folder run
   - In your browser type the URL as showed by the above command.
-  - Sign up for an user account at deepcognition to start using deep learning studio
   
-2. To stop deep learning studio
+2. Use the following link to sign up for an user account at deepcognition to start using deep learning studio:
+
+http://deepcognition.ai/register/?plan=personal-edition
+  
+3. To stop deep learning studio
   - ./dls.sh stop
   
 **Limitations in Personal Edition version:**
